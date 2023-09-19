@@ -52,6 +52,94 @@ function createCloseButton(container) {
   });
 }
 
+function checkoutSubmit() {
+  document.querySelector("#popup-window-cart").remove();
+  const container = createElement("div", null, null, "popup-window-cart", body);
+
+  const titleBar = createElement("div", null, ["title-bar"], null, container);
+  createElement("span", "Checkout", ["title-cart"], null, titleBar);
+
+  const closeBttn = createElement(
+    "div",
+    null,
+    ["close-container"],
+    null,
+    titleBar
+  );
+  createElement("div", null, ["leftright"], null, closeBttn);
+  createElement("div", null, ["rightleft"], null, closeBttn);
+
+  console.log(closeBttn);
+
+  closeBttn.addEventListener("click", function () {
+    main.classList.remove("fadeIn");
+    mainBody.classList.remove("disable-scroll");
+    main.classList.remove("open-window");
+    container.remove();
+  });
+
+  const closeButton = document.querySelector(".close-container");
+  closeButton.style.display = "flex";
+
+  const formContainer = createElement("div", null, ["form-checkout"], null, container)
+  formContainer.innerHTML += `
+  <form action="/action_page.php">
+  <div class="row">
+    <div class="col-25">
+      <label>Full Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="fullname">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label>Econt Office Address</label>
+    </div>
+    <div class="col-75">
+    <input type="text" id="econt-office" name="econt-office" placeholder="Econt street name and number..">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label>Town/City</label>
+    </div>
+    <div class="col-75">
+    <input type="text" id="town" name="town">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label>Phone</label>
+    </div>
+    <div class="col-75">
+    <input type="number" id="phone" name="phone">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label>Email</label>
+    </div>
+    <div class="col-75">
+    <input type="text" id="email" name="email">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label>Order notes (optional)</label>
+    </div>
+    <div class="col-75">
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:80px"></textarea>
+    </div>
+  </div>
+  </form>
+  `;
+
+  // setTimeout(function () {
+  //   closeBttn.click();
+  // }, 1000)
+}
+
 function openShoppingCart(reload) {
   const container = createElement("div", null, null, "popup-window-cart", body);
 
@@ -170,6 +258,8 @@ function openShoppingCart(reload) {
     null,
     container
   );
+
+  proceedToCheckout.addEventListener("click", checkoutSubmit);
 
   deleteButtons();
   manageQuantity();
@@ -408,19 +498,6 @@ function totalCost(product, action) {
 
     localStorage.setItem("totalCost", cart - parseInt(product.price));
   }
-  // else if (cart != null) {
-  //   //Need to change the amount somewhere(after clicking +/- in shopping cart) MASHINAAA
-  //   cart = parseInt(cart);
-  //   localStorage.setItem(
-  //     "totalCost",
-  //     parseInt(product.price) * parseInt(product.amount)
-  //   );
-  // } else {
-  //   localStorage.setItem(
-  //     "totalCost",
-  //     parseInt(product.price) * parseInt(product.amount)
-  //   );
-  // }
 }
 
 function cartNumber(product, action) {
