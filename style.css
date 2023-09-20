@@ -594,7 +594,8 @@ span {
   vertical-align: middle;
   text-align: center;
 }
-input {
+
+input.quantity[type="number"] {
   height: 34px;
   width: 100px;
   text-align: center;
@@ -605,8 +606,8 @@ input {
   vertical-align: middle;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+input.quantity::-webkit-outer-spin-button,
+input.quantity::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -839,7 +840,7 @@ i {
   margin-left: 10px;
 }
 
-.title-bar{
+.title-bar {
   display: flex;
   align-items: center;
   width: 100%;
@@ -847,18 +848,15 @@ i {
   height: 120px;
 }
 
-
-
-.title-bar > span{
- width: 90%;
- font-size: 100px;
- padding-left: 32px;
- padding-top: 28px;
- font-family: "Nanum Pen Script", cursive;
+.title-bar > span {
+  width: 90%;
+  font-size: 100px;
+  padding-left: 32px;
+  padding-top: 28px;
+  font-family: "Nanum Pen Script", cursive;
 }
 
-
-.checkout-button{
+.checkout-button {
   width: 300px;
   height: 100px;
   float: right;
@@ -883,12 +881,13 @@ i {
   }
 }
 
-
-form{
+form {
   width: 800px;
 }
 
-input[type=text],input[type=number], select, textarea {
+.inputForm,
+select,
+textarea {
   width: 70%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -896,8 +895,14 @@ input[type=text],input[type=number], select, textarea {
   resize: vertical;
 }
 
-input[type=text] input[type=number]:focus {
+.inputForm:focus {
   border: 2px solid #555;
+}
+
+.inputForm::-webkit-outer-spin-button,
+.inputForm::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 label {
@@ -927,4 +932,15 @@ label {
   content: "";
   display: table;
   clear: both;
+}
+
+.play-on-hover {
+  width: 600px;
+  height: 600px;
+  background-image: url(img/gif/m1.png);
+  background-size: cover;
+}
+
+.play-on-hover:hover{
+  background-image: url(img/gif/mouth_gif.gif);
 }

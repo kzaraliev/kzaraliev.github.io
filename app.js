@@ -81,7 +81,13 @@ function checkoutSubmit() {
   const closeButton = document.querySelector(".close-container");
   closeButton.style.display = "flex";
 
-  const formContainer = createElement("div", null, ["form-checkout"], null, container)
+  const formContainer = createElement(
+    "div",
+    null,
+    ["form-checkout"],
+    null,
+    container
+  );
   formContainer.innerHTML += `
   <form action="/action_page.php">
   <div class="row">
@@ -89,7 +95,7 @@ function checkoutSubmit() {
       <label>Full Name</label>
     </div>
     <div class="col-75">
-      <input type="text" id="fname" name="fullname">
+      <input class="inputForm" type="text" id="fname" name="fullname">
     </div>
   </div>
   <div class="row">
@@ -97,7 +103,7 @@ function checkoutSubmit() {
       <label>Econt Office Address</label>
     </div>
     <div class="col-75">
-    <input type="text" id="econt-office" name="econt-office" placeholder="Econt street name and number..">
+    <input class="inputForm" type="text" id="econt-office" name="econt-office" placeholder="Econt street name and number..">
     </div>
   </div>
   <div class="row">
@@ -105,7 +111,7 @@ function checkoutSubmit() {
       <label>Town/City</label>
     </div>
     <div class="col-75">
-    <input type="text" id="town" name="town">
+    <input class="inputForm" type="text" id="town" name="town">
     </div>
   </div>
   <div class="row">
@@ -113,7 +119,7 @@ function checkoutSubmit() {
       <label>Phone</label>
     </div>
     <div class="col-75">
-    <input type="number" id="phone" name="phone">
+    <input class="inputForm" type="number" id="phone" name="phone">
     </div>
   </div>
   <div class="row">
@@ -121,7 +127,7 @@ function checkoutSubmit() {
       <label>Email</label>
     </div>
     <div class="col-75">
-    <input type="text" id="email" name="email">
+    <input class="inputForm" type="text" id="email" name="email">
     </div>
   </div>
   <div class="row">
@@ -134,10 +140,6 @@ function checkoutSubmit() {
   </div>
   </form>
   `;
-
-  // setTimeout(function () {
-  //   closeBttn.click();
-  // }, 1000)
 }
 
 function openShoppingCart(reload) {
