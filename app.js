@@ -69,8 +69,6 @@ function checkoutSubmit() {
   createElement("div", null, ["leftright"], null, closeBttn);
   createElement("div", null, ["rightleft"], null, closeBttn);
 
-  console.log(closeBttn);
-
   closeBttn.addEventListener("click", function () {
     main.classList.remove("fadeIn");
     mainBody.classList.remove("disable-scroll");
@@ -81,12 +79,20 @@ function checkoutSubmit() {
   const closeButton = document.querySelector(".close-container");
   closeButton.style.display = "flex";
 
+  const content = createElement(
+    "div",
+    null,
+    ["content-checkout"],
+    null,
+    container
+  );
+
   const formContainer = createElement(
     "div",
     null,
     ["form-checkout"],
     null,
-    container
+    content
   );
   formContainer.innerHTML += `
   <form action="/action_page.php">
@@ -140,6 +146,83 @@ function checkoutSubmit() {
   </div>
   </form>
   `;
+
+  const orderContainer = createElement(
+    "div",
+    null,
+    ["order-checkout-container"],
+    null,
+    content
+  );
+
+  createElement("h1", "Your order", null, null, orderContainer);
+  const productsContainer = createElement(
+    "ul",
+    null,
+    ["products-checkout"],
+    null,
+    orderContainer
+  );
+
+  let cartItems = localStorage.getItem("productsInCart");
+  cartItems = JSON.parse(cartItems);
+  let cartCost = localStorage.getItem("totalCost");
+
+  productsContainer.innerHTML = "";
+  Object.values(cartItems).map((item) => {
+    const li = createElement(
+      "li",
+      null,
+      ["li-checkout"],
+      null,
+      productsContainer
+    );
+    createElement(
+      "h2",
+      `${item.productName} - ${item.size} x ${item.amount}`,
+      ["product-desc-checkout"],
+      null,
+      li
+    );
+    createElement(
+      "p",
+      `${item.amount * item.price},00 lv.`,
+      ["product-price-checkout"],
+      null,
+      li
+    );
+  });
+
+  const li = createElement(
+    "li",
+    null,
+    ["li-checkout"],
+    null,
+    productsContainer
+  );
+  createElement("p", "Total", null, null, li);
+  createElement("h1", `${cartCost},00 lv.`, ["total-cost-checkout"], null, li);
+
+  const selectPayment = createElement(
+    "label",
+    "Cash on delivery",
+    null,
+    "label-checkout",
+    orderContainer
+  );
+
+  const input = createElement("input", null, null, null, selectPayment);
+  input.setAttribute("type", "radio");
+  input.setAttribute("checked", "checked");
+  createElement("span", null, ["checkmark"], null, selectPayment);
+
+  const placeOrderBttn = createElement(
+    "button",
+    "Place order",
+    ["place-order-bttn"],
+    null,
+    orderContainer
+  );
 }
 
 function openShoppingCart(reload) {
@@ -208,16 +291,43 @@ function openShoppingCart(reload) {
 
       const img = createElement("img", null, null, null, product);
       img.src = item.img;
-      createElement("p", item.productName, ["name-cart"], null, product);
-      createElement("p", `Size ${item.size}`, ["size-cart"], null, product);
-      createElement("p", `${item.price},00 lv.`, ["price-cart"], null, product);
+
+      const contentContainer = createElement(
+        "div",
+        null,
+        ["content-cart-container"],
+        null,
+        product
+      );
+
+      createElement(
+        "p",
+        item.productName,
+        ["name-cart"],
+        null,
+        contentContainer
+      );
+      createElement(
+        "p",
+        `Size ${item.size}`,
+        ["size-cart"],
+        null,
+        contentContainer
+      );
+      createElement(
+        "p",
+        `${item.price},00 lv.`,
+        ["price-cart"],
+        null,
+        contentContainer
+      );
 
       const amountSelector = createElement(
         "div",
         null,
         ["quantity-cart"],
         null,
-        product
+        contentContainer
       );
       createElement(
         "i",
@@ -245,7 +355,7 @@ function openShoppingCart(reload) {
         `${item.amount * item.price},00 lv.`,
         ["total-one-product"],
         null,
-        product
+        contentContainer
       );
     });
   }
@@ -278,11 +388,15 @@ function manageQuantity() {
   for (let i = 0; i < increaseButtons.length; i++) {
     decreaseButtons[i].addEventListener("click", () => {
       currentQuantity =
-        decreaseButtons[i].parentElement.parentElement.querySelector(
+        decreaseButtons[
+          i
+        ].parentElement.parentElement.parentElement.querySelector(
           ".total-one-product"
         ).textContent;
       currentProduct =
-        decreaseButtons[i].parentElement.parentElement.querySelector(
+        decreaseButtons[
+          i
+        ].parentElement.parentElement.parentElement.querySelector(
           ".remove-item"
         ).classList[3];
 
@@ -298,11 +412,15 @@ function manageQuantity() {
 
     increaseButtons[i].addEventListener("click", () => {
       currentQuantity =
-        decreaseButtons[i].parentElement.parentElement.querySelector(
+        decreaseButtons[
+          i
+        ].parentElement.parentElement.parentElement.querySelector(
           ".total-one-product"
         ).textContent;
       currentProduct =
-        decreaseButtons[i].parentElement.parentElement.querySelector(
+        decreaseButtons[
+          i
+        ].parentElement.parentElement.parentElement.querySelector(
           ".remove-item"
         ).classList[3];
 

@@ -802,11 +802,15 @@ i {
 }
 
 .remove-item {
-  color: #972129;
   font-size: 42px;
   margin-left: 10px;
   margin-right: 50px;
   cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+.remove-item:hover {
+  color: #972129;
 }
 
 .product > img {
@@ -818,26 +822,35 @@ i {
 .name-cart {
   max-width: 200px;
   width: 100%;
+  font-weight: bold;
 }
 
 .price-cart {
   margin-left: 40px;
-}
-
-.size-cart {
-  margin-left: 10px;
+  color: #41403e;
 }
 
 .quantity-cart {
   font-size: 26px;
+  margin: 0 40px;
 }
 
-.quantity-selector:first-child {
-  margin-left: 50px;
+.quantity-number {
+  margin-right: 10px;
 }
 
 .quantity-selector {
   margin-left: 10px;
+}
+
+.content-cart-container {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.total-one-product {
+  font-weight: bold;
 }
 
 .title-bar {
@@ -890,7 +903,7 @@ select,
 textarea {
   width: 70%;
   padding: 12px;
-  border: 1px solid #ccc;
+  border: solid 2px #41403e;
   border-radius: 4px;
   resize: vertical;
 }
@@ -906,7 +919,7 @@ textarea {
 }
 
 label {
-  padding: 12px 12px 12px 0;
+  padding: 6px 6px 6px 0;
   display: inline-block;
 }
 .container {
@@ -934,6 +947,11 @@ label {
   clear: both;
 }
 
+#econt-office{
+  height: 50px;
+  font-size: 14px;
+}
+
 .play-on-hover {
   width: 600px;
   height: 600px;
@@ -941,6 +959,18 @@ label {
   background-size: cover;
 }
 
-.play-on-hover:hover{
+.play-on-hover:hover {
   background-image: url(img/gif/mouth_gif.gif);
+}
+
+.content-checkout{
+  display: flex;
+  margin: 64px;
+  font-family: "Nanum Pen Script", cursive;
+
+}
+
+.form-checkout{
+  font-size: 28px;
+  font-weight: bold;
 }
