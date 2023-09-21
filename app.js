@@ -223,6 +223,99 @@ function checkoutSubmit() {
     null,
     orderContainer
   );
+
+  placeOrderBttn.addEventListener("click", function sendMail() {
+    (function () {
+      emailjs.init("sXpQ4FTzvcV1tZr9F");
+    })();
+
+    const name = document.querySelector("#fname");
+    const econt = document.querySelector("#econt-office");
+    const town = document.querySelector("#town");
+    const phone = document.querySelector("#phone");
+    const to = document.querySelector("#email");
+    const notes = document.querySelector("#subject");
+
+    let params = {
+      sender: "Voam Clothing",
+      name: name.value,
+      econtOffice: econt.value,
+      town: town.value,
+      phone: phone.value,
+      to: to.value,
+      notes: notes.value,
+    };
+
+    let flag = true;
+
+    Object.entries(params).forEach((parameter) => {
+      const [key, value] = parameter;
+      if (key != "notes") {
+        if (value == "") {
+          switch (key) {
+            case "name":
+              name.classList.add("errors");
+              break;
+            case "econtOffice":
+              econt.classList.add("errors");
+              break;
+            case "town":
+              town.classList.add("errors");
+              break;
+            case "phone":
+              phone.classList.add("errors");
+              break;
+            case "to":
+              to.classList.add("errors");
+              break;
+          }
+
+          flag = false;
+          setTimeout(() => {
+            name.classList.remove("errors");
+            econt.classList.remove("errors");
+            town.classList.remove("errors");
+            phone.classList.remove("errors");
+            to.classList.remove("errors");
+          }, 500);
+        }
+      }
+    });
+
+    if (!flag) {
+      return;
+    }
+
+    if (!ValidateEmail(params.to)) {
+      to.classList.add("errors");
+      setTimeout(() => {
+        to.classList.remove("errors");
+      }, 500);
+      return;
+    }
+
+    let serviceId = "service_43ymwpo";
+    let templateId = "template_gayvref";
+    let flagSend = true;
+    emailjs
+      .send(serviceId, templateId, params)
+      .then((res) => {
+        alert("Your order has been successfully placed");
+      })
+      .catch((res) => {
+        flagSend = false;
+        alert("Something went wrong :'(");
+      });
+
+    main.classList.remove("fadeIn");
+    mainBody.classList.remove("disable-scroll");
+    main.classList.remove("open-window");
+    document.querySelector("#popup-window-cart").remove();
+
+    if (flagSend) {
+      localStorage.clear();
+    }
+  });
 }
 
 function openShoppingCart(reload) {
@@ -270,7 +363,7 @@ function openShoppingCart(reload) {
   cartItems = JSON.parse(cartItems);
   let cartCost = localStorage.getItem("totalCost");
 
-  if (cartItems) {
+  if (cartItems && Object.keys(cartItems).length > 0) {
     productsContainer.innerHTML = "";
     Object.values(cartItems).map((item) => {
       const product = createElement(
@@ -358,20 +451,51 @@ function openShoppingCart(reload) {
         contentContainer
       );
     });
+
+    const proceedToCheckout = createElement(
+      "button",
+      `PROCEED TO CHECKOUT (${cartCost},00 lv.)`,
+      ["checkout-button"],
+      null,
+      container
+    );
+    proceedToCheckout.addEventListener("click", checkoutSubmit);
+  } else {
+    productsContainer.remove();
+    const emptyContainer = createElement(
+      "div",
+      null,
+      ["empty-shopping-cart"],
+      null,
+      container
+    );
+    const emptyCart = createElement(
+      "img",
+      null,
+      null,
+      "empty-shopping-cart-img",
+      emptyContainer
+    );
+    emptyCart.src = "img/empty_cart.png";
+    createElement(
+      "h1",
+      "Your cart is empty",
+      null,
+      "empty-shopping-cart-text",
+      emptyContainer
+    );
+    createElement(
+      "p",
+      "Looks like you haven't added anything to your cart. Go ahead & explore.",
+      null,
+      "empty-shopping-cart-subtext",
+      emptyContainer
+    );
   }
+
   if (Object.keys(cartItems).length > 2) {
     productsContainer.style.overflowY = "scroll";
   }
-
-  const proceedToCheckout = createElement(
-    "button",
-    `PROCEED TO CHECKOUT (${cartCost},00 lv.)`,
-    ["checkout-button"],
-    null,
-    container
-  );
-
-  proceedToCheckout.addEventListener("click", checkoutSubmit);
 
   deleteButtons();
   manageQuantity();
@@ -665,6 +789,13 @@ function setItems(item, action) {
   }
 
   localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+}
+
+function ValidateEmail(mail) {
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+    return true;
+  }
+  return false;
 }
 
 function createAmountSelector(orderContainer) {

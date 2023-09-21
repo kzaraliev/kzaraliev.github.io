@@ -782,6 +782,34 @@ i {
   overflow: hidden;
 }
 
+.empty-shopping-cart {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  text-align: center;
+  margin-top: 3em;
+}
+
+#empty-shopping-cart-img {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 3em;
+  margin-right: 3em;
+}
+
+#empty-shopping-cart-text{
+  margin-bottom: 0.5em;
+}
+
+#empty-shopping-cart-subtext{
+  width: 70%;
+  font-size: 20px;
+}
+
 .products {
   max-width: 1050px;
   width: 100%;
@@ -947,7 +975,7 @@ label {
   clear: both;
 }
 
-#econt-office{
+#econt-office {
   height: 50px;
   font-size: 14px;
 }
@@ -963,14 +991,13 @@ label {
   background-image: url(img/gif/mouth_gif.gif);
 }
 
-.content-checkout{
+.content-checkout {
   display: flex;
   margin: 64px;
   font-family: "Nanum Pen Script", cursive;
-
 }
 
-.form-checkout{
+.form-checkout {
   font-size: 28px;
   font-weight: bold;
 }
