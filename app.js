@@ -155,7 +155,7 @@ function checkoutSubmit() {
     content
   );
 
-  createElement("h1", "Your order", null, null, orderContainer);
+  createElement("h1", "Your order:", null, null, orderContainer);
   const productsContainer = createElement(
     "ul",
     null,
@@ -168,6 +168,9 @@ function checkoutSubmit() {
   cartItems = JSON.parse(cartItems);
   let cartCost = localStorage.getItem("totalCost");
 
+  if (Object.keys(cartItems).length > 2) {
+    productsContainer.style.overflowY = "scroll";
+  }
   productsContainer.innerHTML = "";
   Object.values(cartItems).map((item) => {
     const li = createElement(
@@ -193,34 +196,31 @@ function checkoutSubmit() {
     );
   });
 
-  const li = createElement(
-    "li",
+  createElement(
+    "h1",
+    `Total: ${cartCost},00 lv.`,
+    ["total-cost-checkout"],
     null,
-    ["li-checkout"],
-    null,
-    productsContainer
+    orderContainer
   );
-  createElement("p", "Total", null, null, li);
-  createElement("h1", `${cartCost},00 lv.`, ["total-cost-checkout"], null, li);
 
-  const selectPayment = createElement(
+  createElement(
     "label",
-    "Cash on delivery",
+    "*Pay with cash upon delivery.",
     null,
     "label-checkout",
     orderContainer
   );
 
-  const input = createElement("input", null, null, null, selectPayment);
-  input.setAttribute("type", "radio");
-  input.setAttribute("checked", "checked");
-  createElement("span", null, ["checkmark"], null, selectPayment);
+  // const input = createElement("input", null, null, null, selectPayment);
+  // input.setAttribute("type", "radio");
+  // input.setAttribute("checked", "checked");
 
   const placeOrderBttn = createElement(
     "button",
     "Place order",
-    ["place-order-bttn"],
-    null,
+    ["section-buttons"],
+    "place-order-bttn",
     orderContainer
   );
 

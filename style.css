@@ -480,7 +480,7 @@ img {
 
 #popup-content-container {
   width: 500px;
-  height: 200px;
+  height: 250px;
   margin-bottom: 48px;
 }
 
@@ -923,7 +923,8 @@ i {
 }
 
 form {
-  width: 800px;
+  width: 600px;
+  letter-spacing: 0.2px;
 }
 
 .inputForm,
@@ -983,21 +984,69 @@ label {
 .play-on-hover {
   width: 600px;
   height: 600px;
-  background-image: url(img/gif/m1.png);
+  background-image: url(img/mouth-voam.png);
   background-size: cover;
 }
 
 .play-on-hover:hover {
-  background-image: url(img/gif/mouth_gif.gif);
+  background-image: url(img/mouth_gif.gif);
 }
 
 .content-checkout {
   display: flex;
   margin: 64px;
+  margin-top: 48px;
   font-family: "Nanum Pen Script", cursive;
 }
 
 .form-checkout {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: bold;
+}
+
+.order-checkout-container{
+  display: flex;
+  flex-direction: column;
+  font-size: 28px;
+  width: 550px;
+}
+
+
+.products-checkout{
+  height: 250px;
+}
+
+.li-checkout{
+  display: flex;
+  border-bottom: 1px solid black;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.product-desc-checkout{
+  max-width: 280px;
+  font-weight: normal;
+}
+
+.product-price-checkout{
+  width: 125px;
+  margin-left: 24px;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.total-cost-checkout{
+  text-align: right;
+  margin-top: 12px;
+}
+
+#label-checkout{
+  text-align: right;
+}
+
+#place-order-bttn{
+  height: 80px;
+  width: 400px;
+  padding: 6px 12px;
+  cursor: pointer;
 }
