@@ -212,10 +212,6 @@ function checkoutSubmit() {
     orderContainer
   );
 
-  // const input = createElement("input", null, null, null, selectPayment);
-  // input.setAttribute("type", "radio");
-  // input.setAttribute("checked", "checked");
-
   const placeOrderBttn = createElement(
     "button",
     "Place order",
@@ -236,6 +232,13 @@ function checkoutSubmit() {
     const to = document.querySelector("#email");
     const notes = document.querySelector("#subject");
 
+    const items = JSON.parse(localStorage.getItem("productsInCart"));
+    let products = [];
+
+    Object.values(items).map((item) => {
+      products.push(`${item.productName} - ${item.size} x ${item.amount}`);
+    });
+
     let params = {
       sender: "Voam Clothing",
       name: name.value,
@@ -244,6 +247,10 @@ function checkoutSubmit() {
       phone: phone.value,
       to: to.value,
       notes: notes.value,
+      orderNumber: Math.floor(Math.random() * 1000) + 1,
+      date: new Date().toISOString().slice(0, 10),
+      products: products.join("\r\n"),
+      totalPrice: localStorage.getItem("totalCost"),
     };
 
     let flag = true;
@@ -294,18 +301,21 @@ function checkoutSubmit() {
       return;
     }
 
-    let serviceId = "service_43ymwpo";
-    let templateId = "template_gayvref";
+    const serviceId = "service_43ymwpo";
+    const templateIdToCustomer = "template_gayvref";
     let flagSend = true;
     emailjs
-      .send(serviceId, templateId, params)
-      .then((res) => {
+      .send(serviceId, templateIdToCustomer, params)
+      .then(() => {
         alert("Your order has been successfully placed");
       })
-      .catch((res) => {
+      .catch(() => {
         flagSend = false;
         alert("Something went wrong :'(");
       });
+
+    const templateIdToBoss = "template_cx1qjkq"
+    emailjs.send(serviceId, templateIdToBoss, params).then().catch();
 
     main.classList.remove("fadeIn");
     mainBody.classList.remove("disable-scroll");

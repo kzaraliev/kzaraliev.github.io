@@ -213,6 +213,10 @@ img {
   line-height: 1.12;
 }
 
+.content > h1{
+  font-size: 24px;
+}
+
 .bold {
   font-weight: bold;
   font-size: 24px;
@@ -221,10 +225,11 @@ img {
 
 .paragraph-about{
   margin: 12px 0;
+  font-size: 18px;
 }
 
 .bold:hover {
-  text-shadow: 2px 2px rgb(110, 107, 107);
+  text-shadow: 3px 3px rgb(110, 107, 107);
   transition: .1s ease-in;
 }
 
