@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan&family=Nanum+Pen+Script&family=Ubuntu&display=swap");
 
 * {
   margin: 0;
@@ -201,10 +201,42 @@ img {
 
 #about {
   display: flex;
+  justify-content: space-evenly;
+  text-transform: uppercase;
+  padding-top: 0;
 }
 
 .content {
-  width: 300px;
+  width: 700px;
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 1.12;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 24px;
+  transition: .1s ease-in;
+}
+
+.paragraph-about{
+  margin: 12px 0;
+}
+
+.bold:hover {
+  text-shadow: 2px 2px rgb(110, 107, 107);
+  transition: .1s ease-in;
+}
+
+.play-on-hover {
+  width: 600px;
+  height: 600px;
+  background-image: url(img/mouth-voam.png);
+  background-size: cover;
+}
+
+.play-on-hover:hover {
+  background-image: url(img/mouth_gif.gif);
 }
 
 /*Contact section*/
@@ -801,11 +833,11 @@ i {
   margin-right: 3em;
 }
 
-#empty-shopping-cart-text{
+#empty-shopping-cart-text {
   margin-bottom: 0.5em;
 }
 
-#empty-shopping-cart-subtext{
+#empty-shopping-cart-subtext {
   width: 70%;
   font-size: 20px;
 }
@@ -981,17 +1013,6 @@ label {
   font-size: 14px;
 }
 
-.play-on-hover {
-  width: 600px;
-  height: 600px;
-  background-image: url(img/mouth-voam.png);
-  background-size: cover;
-}
-
-.play-on-hover:hover {
-  background-image: url(img/mouth_gif.gif);
-}
-
 .content-checkout {
   display: flex;
   margin: 64px;
@@ -1004,47 +1025,46 @@ label {
   font-weight: bold;
 }
 
-.order-checkout-container{
+.order-checkout-container {
   display: flex;
   flex-direction: column;
   font-size: 28px;
   width: 550px;
 }
 
-
-.products-checkout{
+.products-checkout {
   height: 250px;
 }
 
-.li-checkout{
+.li-checkout {
   display: flex;
   border-bottom: 1px solid black;
   justify-content: space-between;
   margin-bottom: 12px;
 }
 
-.product-desc-checkout{
+.product-desc-checkout {
   max-width: 280px;
   font-weight: normal;
 }
 
-.product-price-checkout{
+.product-price-checkout {
   width: 125px;
   margin-left: 24px;
   font-size: 36px;
   font-weight: bold;
 }
 
-.total-cost-checkout{
+.total-cost-checkout {
   text-align: right;
   margin-top: 12px;
 }
 
-#label-checkout{
+#label-checkout {
   text-align: right;
 }
 
-#place-order-bttn{
+#place-order-bttn {
   height: 80px;
   width: 400px;
   padding: 6px 12px;
