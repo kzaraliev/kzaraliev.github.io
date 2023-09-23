@@ -17,7 +17,7 @@ productBlocks.forEach((product) => {
   });
 });
 
-main.style.display = "none";
+main.classList.add("notDisplay");
 let itemsInCart = [];
 
 function enterSite(e) {
