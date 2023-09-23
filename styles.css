@@ -489,7 +489,7 @@ img {
   z-index: 9999;
   border-radius: 15px 225px 15px 255px/ 225px 15px 255px 15px;
   border: solid 5px rgb(0, 0, 0);
-  display: flex;
+  /* display: flex; */
   justify-content: space-around;
   align-items: center;
   overflow: hidden;
@@ -516,13 +516,17 @@ img {
   overflow: hidden;
 }
 
+.preview-product-content{
+  justify-content: space-around;
+}
+
 #popup-slideshow {
   margin: 24px;
 }
 
 #popup-slideshow > .mySlides > img {
   width: 500px;
-  height: 600px;
+  height: 500px;
 }
 
 #popup-content-container {
@@ -661,6 +665,7 @@ input.quantity::-webkit-inner-spin-button {
 
 #popup-content {
   width: 500px;
+  margin-right: 32px;
 }
 
 #popup-order {

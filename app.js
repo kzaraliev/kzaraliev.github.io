@@ -616,16 +616,57 @@ function showProduct(product) {
   }
 
   const container = createElement("div", null, null, "popup-window", body);
+
+  const titleBar = createElement("div", null, ["title-bar"], null, container);
+  const titleShopping = createElement(
+    "span",
+    "Preview product",
+    ["title-cart", "unselectable"],
+    null,
+    titleBar
+  );
+
+  const closeBttn = createElement(
+    "div",
+    null,
+    ["close-container"],
+    null,
+    titleBar
+  );
+
+  createElement("div", null, ["leftright"], null, closeBttn);
+  createElement("div", null, ["rightleft"], null, closeBttn);
+
+  closeBttn.addEventListener("click", function () {
+    main.classList.remove("fadeIn");
+    mainBody.classList.remove("disable-scroll");
+    main.classList.remove("open-window");
+    container.remove();
+  });
+
+  const closeButton = document.querySelector(".close-container");
+  closeButton.style.display = "flex";
+
+  const productContainer = createElement(
+    "div",
+    null,
+    ["preview-product-content"],
+    null,
+    container
+  );
+
+  productContainer.style.display = "flex";
+
   const slideshow = product.firstElementChild.cloneNode(true);
   slideshow.setAttribute("id", "popup-slideshow");
-  container.appendChild(slideshow);
+  productContainer.appendChild(slideshow);
 
   const contentContainer = createElement(
     "div",
     null,
     null,
     "popup-content",
-    container
+    productContainer
   );
 
   const content = product.childNodes[3].cloneNode(true);
@@ -701,8 +742,6 @@ function showProduct(product) {
   const postText = createElement("div", null, ["posttext"], null, pretextDone);
   postText.innerHTML = '<i class="fas fa-check"></i> ADDED';
 
-  createCloseButton(container);
-
   mainBody.classList.add("disable-scroll");
   main.classList.add("open-window");
   container.classList.add("fadeIn");
@@ -727,8 +766,6 @@ function showProduct(product) {
     const tag = (
       content.childNodes[3].textContent + sizeSelector.value
     ).replace(/\s/g, "");
-
-
 
     const itemForCart = {
       img: slideshow.childNodes[1].childNodes[3].src.split(),
