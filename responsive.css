@@ -22,7 +22,7 @@
     transform: translate(-50%, -50%);
     background-color: lightgray;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     font-family: "Ubuntu", sans-serif;
     overflow: hidden;
     border: 0;
@@ -32,6 +32,7 @@
 
   .nav-bar {
     margin-bottom: 0;
+    height: 100px;
   }
 
   .nav-bar > li {

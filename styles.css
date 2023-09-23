@@ -10,12 +10,13 @@ body {
   background-color: rgba(158, 158, 152, 0.664);
 }
 
-.notDisplay{
+.notDisplay {
   display: none;
 }
 
 .unselectable {
   user-select: none;
+  cursor: default;
 }
 
 ::-webkit-scrollbar {
@@ -102,7 +103,7 @@ body {
   margin: 24px 0;
 }
 
-.sections-buttons{
+.sections-buttons {
   display: flex;
   justify-content: space-between;
 }
@@ -222,24 +223,24 @@ img {
   line-height: 1.12;
 }
 
-.content > h1{
+.content > h1 {
   font-size: 24px;
 }
 
 .bold {
   font-weight: bold;
   font-size: 24px;
-  transition: .1s ease-in;
+  transition: 0.1s ease-in;
 }
 
-.paragraph-about{
+.paragraph-about {
   margin: 12px 0;
   font-size: 18px;
 }
 
 .bold:hover {
   text-shadow: 3px 3px rgb(110, 107, 107);
-  transition: .1s ease-in;
+  transition: 0.1s ease-in;
 }
 
 .play-on-hover {

@@ -57,8 +57,14 @@ function checkoutSubmit() {
   const container = createElement("div", null, null, "popup-window-cart", body);
 
   const titleBar = createElement("div", null, ["title-bar"], null, container);
-  createElement("span", "Checkout", ["title-cart"], null, titleBar);
-
+  const titleCheckout = createElement(
+    "span",
+    "Checkout",
+    ["title-cart"],
+    null,
+    titleBar
+  );
+  titleCheckout.classList.add("unselectable");
   const closeBttn = createElement(
     "div",
     null,
@@ -314,7 +320,7 @@ function checkoutSubmit() {
         alert("Something went wrong :'(");
       });
 
-    const templateIdToBoss = "template_cx1qjkq"
+    const templateIdToBoss = "template_cx1qjkq";
     emailjs.send(serviceId, templateIdToBoss, params).then().catch();
 
     main.classList.remove("fadeIn");
@@ -332,8 +338,14 @@ function openShoppingCart(reload) {
   const container = createElement("div", null, null, "popup-window-cart", body);
 
   const titleBar = createElement("div", null, ["title-bar"], null, container);
-  createElement("span", "Shopping cart", ["title-cart"], null, titleBar);
-
+  const titleShopping = createElement(
+    "span",
+    "Shopping cart",
+    ["title-cart"],
+    null,
+    titleBar
+  );
+  titleShopping.classList.add("unselectable");
   const closeBttn = createElement(
     "div",
     null,
@@ -715,6 +727,8 @@ function showProduct(product) {
     const tag = (
       content.childNodes[3].textContent + sizeSelector.value
     ).replace(/\s/g, "");
+
+
 
     const itemForCart = {
       img: slideshow.childNodes[1].childNodes[3].src.split(),
