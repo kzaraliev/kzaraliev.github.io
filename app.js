@@ -253,7 +253,7 @@ function checkoutSubmit() {
       phone: phone.value,
       to: to.value,
       notes: notes.value,
-      orderNumber: Math.floor(Math.random() * 1000) + 1,
+      orderNumber: Math.floor(Math.random() * 10000) + 1,
       date: new Date().toISOString().slice(0, 10),
       products: products.join("\r\n"),
       totalPrice: localStorage.getItem("totalCost"),
