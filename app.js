@@ -228,7 +228,7 @@ function checkoutSubmit() {
 
   placeOrderBttn.addEventListener("click", function sendMail() {
     (function () {
-      emailjs.init("sXpQ4FTzvcV1tZr9F");
+      emailjs.init("qcyeQ2ud7IRr-5jxS");
     })();
 
     const name = document.querySelector("#fname");
