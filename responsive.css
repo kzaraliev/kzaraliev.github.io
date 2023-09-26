@@ -3,7 +3,7 @@
     background-color: #d3d3d3;
     overflow: hidden;
   }
-
+  
   #bttn-enter {
     display: none;
   }
@@ -17,7 +17,7 @@
     display: flex;
   }
   .main {
-    width: 100vw;
+    width: 100.1vw;
     height: 110vh;
     top: 50%;
     left: 50%;
@@ -314,7 +314,7 @@
   }
 
   .content-contact{
-    height: 365px;
+    height: 380px;
   }
 }
 
