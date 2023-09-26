@@ -307,8 +307,8 @@ function checkoutSubmit() {
       return;
     }
 
-    const serviceId = "service_43ymwpo";
-    const templateIdToCustomer = "template_gayvref";
+    const serviceId = "service_1ku2u34";
+    const templateIdToCustomer = "template_e9863s2";
     let flagSend = true;
     emailjs
       .send(serviceId, templateIdToCustomer, params)
@@ -320,7 +320,7 @@ function checkoutSubmit() {
         alert("Something went wrong :'(");
       });
 
-    const templateIdToBoss = "template_cx1qjkq";
+    const templateIdToBoss = "template_7bmzsml";
     emailjs.send(serviceId, templateIdToBoss, params).then().catch();
 
     main.classList.remove("fadeIn");
@@ -753,7 +753,17 @@ function showProduct(product) {
   const done = document.querySelector(".done");
   addToCartBttn.addEventListener("click", () => {
     addToCartBttn.disabled = true;
-    if (sizeSelector.value == "") {
+    const isInStock = document.querySelector("#popup-content-container")
+      .childNodes[1];
+
+    if (isInStock.textContent == "Out of Stock") {
+      isInStock.style.color = "red";
+      setTimeout(function () {
+        isInStock.style.color = "black";
+        addToCartBttn.disabled = false;
+      }, 500);
+      return;
+    } else if (sizeSelector.value == "") {
       sizeSelector.classList.add("errors");
       setTimeout(function () {
         sizeSelector.classList.remove("errors");

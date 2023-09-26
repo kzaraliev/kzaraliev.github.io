@@ -475,6 +475,12 @@ img {
   transform: translate3d(20px, 30px, 250px);
 }
 
+#copyright-text{
+  text-align: center;
+  color: #6b6a68;
+  font-family: "Nanum Pen Script", cursive;
+}
+
 #popup-window {
   position: fixed;
   width: 1200px;
@@ -533,10 +539,11 @@ img {
   width: 500px;
   height: 250px;
   margin-bottom: 48px;
+  font-family: "Ubuntu", sans-serif;
 }
 
 #popup-content-container > h1 {
-  font-size: 72px;
+  font-size: 64px;
   margin-bottom: 24px;
 }
 
@@ -854,7 +861,9 @@ i {
 }
 
 #empty-shopping-cart-text {
-  margin-bottom: 0.5em;
+  margin-bottom: 12px;
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 48px;
 }
 
 #empty-shopping-cart-subtext {
