@@ -314,7 +314,12 @@
   }
 
   .content-contact{
-    height: 380px;
+    height: 425px;
+  }
+
+  .terms-container{
+    width: 80vw;
+    height: 70vh;
   }
 }
 

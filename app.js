@@ -5,11 +5,13 @@ const mainBody = document.querySelector(".main-body");
 const body = document.querySelector("body");
 const shoppingCart = document.querySelector("#shopping-cart");
 const productBlocks = document.querySelectorAll(".open-popup");
+const terms = document.querySelector("#terms");
 
 slideshowMove();
 
 bttnEnter.addEventListener("click", enterSite);
 shoppingCart.addEventListener("click", openShoppingCart);
+terms.addEventListener("click", openPrivacyPolicy);
 
 productBlocks.forEach((product) => {
   product.addEventListener("click", function () {
@@ -18,7 +20,6 @@ productBlocks.forEach((product) => {
 });
 
 main.classList.add("notDisplay");
-let itemsInCart = [];
 
 function enterSite(e) {
   e.preventDefault();
@@ -33,38 +34,272 @@ function enterSite(e) {
   main.classList.add("fadeIn");
 }
 
-function createCloseButton(container) {
-  const closeBttn = createElement(
+function openPrivacyPolicy() {
+  basicPage("Privacy Policy");
+
+  const container = document.querySelector("#popup-window-cart");
+  container.classList.add("fadeIn");
+  const textContent = createElement(
     "div",
     null,
-    ["close-container"],
+    ["terms-container"],
     null,
     container
   );
-  createElement("div", null, ["leftright"], null, closeBttn);
-  createElement("div", null, ["rightleft"], null, closeBttn);
 
-  closeBttn.addEventListener("click", function () {
-    main.classList.remove("fadeIn");
-    mainBody.classList.remove("disable-scroll");
-    main.classList.remove("open-window");
-    container.remove();
-  });
+  createElement(
+    "h2",
+    "Last Updated: 27.09.2023",
+    ["formal-text"],
+    null,
+    textContent
+  );
+
+  createElement(
+    "p",
+    "Welcome to Voam Clothing! We value your trust and are committed to protecting your privacy. This Privacy Policy is designed to help you understand how we collect, use, disclose, and safeguard your personal information when you interact with our website, purchase our products, or engage with us in any other way. By using our services, you consent to the practices described in this Privacy Policy.",
+    ["formal-text"],
+    null,
+    textContent
+  );
+
+  createElement(
+    "h2",
+    "Information We Collect",
+    ["formal-text"],
+    null,
+    textContent
+  );
+
+  createElement(
+    "p",
+    "We may collect various types of information, including:",
+    ["formal-text"],
+    null,
+    textContent
+  );
+
+  const ul1 = createElement("ul", null, ["info-collect"], null, textContent);
+
+  createElement(
+    "li",
+    "Personal Information: This includes information such as your name, email address, shipping address, billing information, and phone number, which we collect when you make a purchase.",
+    ["formal-text"],
+    null,
+    ul1
+  );
+
+  createElement(
+    "li",
+    "Transaction Information: When you make a purchase, we collect information related to your order, including product details, payment information, and shipping information.",
+    ["formal-text"],
+    null,
+    ul1
+  );
+
+  createElement(
+    "li",
+    "Device Information: We collect information about the device you use to access our website, including browser type and operating system.",
+    ["formal-text"],
+    null,
+    ul1
+  );
+
+  createElement(
+    "li",
+    "Usage Information: We may collect information about how you use our website, such as the pages you visit, your browsing history, and your interactions with our content and advertisements.",
+    ["formal-text"],
+    null,
+    ul1
+  );
+
+  createElement(
+    "li",
+    "Communications: We may collect information from your communications with us, including emails, chat messages, and customer support inquiries.",
+    ["formal-text"],
+    null,
+    ul1
+  );
+
+  createElement(
+    "li",
+    "Cookies and Similar Technologies: We use cookies and similar technologies to collect information about your browsing behavior and preferences. ",
+    ["formal-text"],
+    null,
+    ul1
+  );
+
+  createElement(
+    "h2",
+    "How We Use Your Information",
+    ["formal-text"],
+    null,
+    textContent
+  );
+
+  createElement(
+    "p",
+    "We use your information for various purposes, including:",
+    ["formal-text"],
+    null,
+    textContent
+  );
+
+  const ul2 = createElement("ul", null, ["info-collect"], null, textContent);
+
+  createElement(
+    "li",
+    "Fulfillment of Orders: To process and fulfill your orders, including shipping and handling.",
+    ["formal-text"],
+    null,
+    ul2
+  );
+
+  createElement(
+    "li",
+    "Customer Support: To provide customer support and respond to your inquiries.",
+    ["formal-text"],
+    null,
+    ul2
+  );
+
+  createElement(
+    "li",
+    "Marketing and Promotions: To send you promotional materials, newsletters, and updates about our products and services, if you have opted to receive them.",
+    ["formal-text"],
+    null,
+    ul2
+  );
+
+  createElement(
+    "li",
+    "Analytics: To analyze and improve our website, products, and services.",
+    ["formal-text"],
+    null,
+    ul2
+  );
+
+  createElement(
+    "li",
+    "Legal Compliance: To comply with applicable laws, regulations, and legal requests.",
+    ["formal-text"],
+    null,
+    ul2
+  );
+
+  createElement(
+    "li",
+    "Protection: To protect the security and integrity of our website and business.",
+    ["formal-text"],
+    null,
+    ul2
+  );
+
+  createElement(
+    "h2",
+    "Sharing Your Information",
+    ["formal-text"],
+    null,
+    textContent
+  );
+
+  createElement(
+    "p",
+    "We may share your information with:",
+    ["formal-text"],
+    null,
+    textContent
+  );
+
+  const ul3 = createElement("ul", null, ["info-collect"], null, textContent);
+
+  createElement(
+    "li",
+    "Service Providers: We may share your information with third-party service providers who help us with various aspects of our business, such as payment processing, shipping, and marketing.",
+    ["formal-text"],
+    null,
+    ul3
+  );
+
+  createElement(
+    "li",
+    "Legal Requirements: We may disclose your information in response to legal requests or to comply with applicable laws and regulations.",
+    ["formal-text"],
+    null,
+    ul3
+  );
+
+  createElement(
+    "li",
+    "Business Transfers: In the event of a merger, acquisition, or sale of all or part of our business, your information may be transferred to the new owner.",
+    ["formal-text"],
+    null,
+    ul3
+  );
+
+  createElement(
+    "h2",
+    "Security",
+    ["formal-text"],
+    null,
+    textContent
+  );
+
+  createElement(
+    "p",
+    "We take reasonable measures to protect your personal information, but no online data transmission is completely secure. You are responsible for maintaining the security of your account credentials.",
+    ["formal-text"],
+    null,
+    textContent
+  );
+
+  createElement(
+    "h2",
+    "Changes to this Privacy Policy",
+    ["formal-text"],
+    null,
+    textContent
+  );
+
+  createElement(
+    "p",
+    "We may update this Privacy Policy from time to time. The latest version will always be available on our website, and the date of the last update will be noted at the top of the policy.",
+    ["formal-text"],
+    null,
+    textContent
+  );
+
+  createElement(
+    "h2",
+    "Contact Us",
+    ["formal-text"],
+    null,
+    textContent
+  );
+
+  createElement(
+    "p",
+    "If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at: voaminfo@gmail.com",
+    ["formal-text"],
+    null,
+    textContent
+  );
+
+  createElement(
+    "p",
+    "Thank you for choosing Voam Clothing. Your privacy is important to us, and we are committed to ensuring your personal information is handled with care and in compliance with applicable privacy laws.",
+    ["formal-text"],
+    null,
+    textContent
+  );
 }
 
-function checkoutSubmit() {
-  document.querySelector("#popup-window-cart").remove();
+function basicPage(title) {
   const container = createElement("div", null, null, "popup-window-cart", body);
 
   const titleBar = createElement("div", null, ["title-bar"], null, container);
-  const titleCheckout = createElement(
-    "span",
-    "Checkout",
-    ["title-cart"],
-    null,
-    titleBar
-  );
-  titleCheckout.classList.add("unselectable");
+  createElement("span", title, ["title-cart", "unselectable"], null, titleBar);
+
   const closeBttn = createElement(
     "div",
     null,
@@ -84,6 +319,15 @@ function checkoutSubmit() {
 
   const closeButton = document.querySelector(".close-container");
   closeButton.style.display = "flex";
+
+  mainBody.classList.add("disable-scroll");
+  main.classList.add("open-window");
+}
+
+function checkoutSubmit() {
+  document.querySelector("#popup-window-cart").remove();
+  basicPage("Checkout");
+  const container = document.querySelector("#popup-window-cart");
 
   const content = createElement(
     "div",
@@ -335,36 +579,8 @@ function checkoutSubmit() {
 }
 
 function openShoppingCart(reload) {
-  const container = createElement("div", null, null, "popup-window-cart", body);
-
-  const titleBar = createElement("div", null, ["title-bar"], null, container);
-  const titleShopping = createElement(
-    "span",
-    "Shopping cart",
-    ["title-cart"],
-    null,
-    titleBar
-  );
-  titleShopping.classList.add("unselectable");
-  const closeBttn = createElement(
-    "div",
-    null,
-    ["close-container"],
-    null,
-    titleBar
-  );
-  createElement("div", null, ["leftright"], null, closeBttn);
-  createElement("div", null, ["rightleft"], null, closeBttn);
-
-  closeBttn.addEventListener("click", function () {
-    main.classList.remove("fadeIn");
-    mainBody.classList.remove("disable-scroll");
-    main.classList.remove("open-window");
-    container.remove();
-  });
-
-  const closeButton = document.querySelector(".close-container");
-  closeButton.style.display = "flex";
+  basicPage("Shopping Cart");
+  const container = document.querySelector("#popup-window-cart");
 
   const productsContainer = createElement(
     "div",
@@ -373,9 +589,6 @@ function openShoppingCart(reload) {
     null,
     container
   );
-
-  mainBody.classList.add("disable-scroll");
-  main.classList.add("open-window");
 
   if (reload) {
     container.classList.add("fadeIn");
@@ -396,7 +609,7 @@ function openShoppingCart(reload) {
         productsContainer
       );
 
-      const removeItem = createElement(
+      createElement(
         "i",
         null,
         ["fa-solid", "fa-xmark", "remove-item", `${item.tag}`],
@@ -615,37 +828,10 @@ function showProduct(product) {
     product = product.parentElement;
   }
 
-  const container = createElement("div", null, null, "popup-window", body);
+  basicPage("Product preview");
 
-  const titleBar = createElement("div", null, ["title-bar"], null, container);
-  const titleShopping = createElement(
-    "span",
-    "Preview product",
-    ["title-cart", "unselectable"],
-    null,
-    titleBar
-  );
-
-  const closeBttn = createElement(
-    "div",
-    null,
-    ["close-container"],
-    null,
-    titleBar
-  );
-
-  createElement("div", null, ["leftright"], null, closeBttn);
-  createElement("div", null, ["rightleft"], null, closeBttn);
-
-  closeBttn.addEventListener("click", function () {
-    main.classList.remove("fadeIn");
-    mainBody.classList.remove("disable-scroll");
-    main.classList.remove("open-window");
-    container.remove();
-  });
-
-  const closeButton = document.querySelector(".close-container");
-  closeButton.style.display = "flex";
+  const container = document.querySelector("#popup-window-cart");
+  container.classList.add("fadeIn");
 
   const productContainer = createElement(
     "div",
@@ -741,10 +927,6 @@ function showProduct(product) {
   );
   const postText = createElement("div", null, ["posttext"], null, pretextDone);
   postText.innerHTML = '<i class="fas fa-check"></i> ADDED';
-
-  mainBody.classList.add("disable-scroll");
-  main.classList.add("open-window");
-  container.classList.add("fadeIn");
 
   links = document.querySelectorAll(".slideshow-container a");
 
