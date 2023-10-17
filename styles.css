@@ -1,5 +1,56 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan&family=Nanum+Pen+Script&family=Ubuntu&display=swap");
 
+/* Section to delete after 11.11 */
+.main{
+  display: none !important;
+}
+
+#site-background{
+  background-image: none !important;
+}
+
+.enter{
+  display: none !important ;
+}
+
+#terms{
+  color: white !important;
+}
+
+body{
+  background-color: #000000 !important;
+}
+
+.event{
+  background-color: #000000;
+  color: white;
+  width: 40vw;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 38vh;
+  margin-top: 32px;
+}
+
+.date{
+  font-size: 7vw;
+}
+
+.text-date{
+  font-size: 2vw;
+}
+
+@media screen and (max-width: 600px){
+  .date{
+    font-size: 18vw;
+  }
+  
+  .text-date{
+    font-size: 4vw;
+  }
+}
+
+/* -------------------------------- */
+
 * {
   margin: 0;
   padding: 0;
