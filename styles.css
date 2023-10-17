@@ -19,24 +19,27 @@
 
 body{
   background-color: #000000 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 .event{
   background-color: #000000;
   color: white;
-  width: 40vw;
+  width: 70vw;
   text-align: center;
   margin: 0 auto;
-  margin-bottom: 38vh;
   margin-top: 32px;
 }
 
 .date{
-  font-size: 7vw;
+  font-size: 8vw;
 }
 
 .text-date{
-  font-size: 2vw;
+  font-size: 3vw;
 }
 
 @media screen and (max-width: 600px){
