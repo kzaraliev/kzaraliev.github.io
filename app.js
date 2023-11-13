@@ -885,13 +885,13 @@ function showProduct(product) {
     null,
     sizeSelector
   );
-  const sSize = createElement("option", "S", null, null, sizeSelector);
+  //const sSize = createElement("option", "S", null, null, sizeSelector);
   const mSize = createElement("option", "M", null, null, sizeSelector);
-  const lSize = createElement("option", "L", null, null, sizeSelector);
+  //const lSize = createElement("option", "L", null, null, sizeSelector);
 
-  sSize.value = "S";
+  //sSize.value = "S";
   mSize.value = "M";
-  lSize.value = "L";
+  //lSize.value = "L";
 
   defaultText.value = "";
   defaultText.disabled = true;

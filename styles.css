@@ -191,12 +191,16 @@ body {
   cursor: pointer;
 }
 
-.product-content{
+/* .product-content{
   width: 120%;
-}
+} */
 
 .product-content > h2 {
   margin-top: 8px;
+}
+
+.product-content > h1 {
+  font-size: 1.7em;
 }
 
 img {
