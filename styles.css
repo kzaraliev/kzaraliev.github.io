@@ -1,59 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan&family=Nanum+Pen+Script&family=Ubuntu&display=swap");
 
-/* Section to delete after 11.11 */
-.main{
-  display: none !important;
-}
-
-#site-background{
-  background-image: none !important;
-}
-
-.enter{
-  display: none !important ;
-}
-
-#terms{
-  color: white !important;
-}
-
-body{
-  background-color: #000000 !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-}
-
-.event{
-  background-color: #000000;
-  color: white;
-  width: 70vw;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 32px;
-}
-
-.date{
-  font-size: 8vw;
-}
-
-.text-date{
-  font-size: 3vw;
-}
-
-@media screen and (max-width: 600px){
-  .date{
-    font-size: 18vw;
-  }
-  
-  .text-date{
-    font-size: 4vw;
-  }
-}
-
-/* -------------------------------- */
-
 * {
   margin: 0;
   padding: 0;
@@ -124,8 +70,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 1500px;
-  height: 850px;
+  width: 90vw;
+  height: 90vh;
   background-color: lightgray;
   flex-direction: column;
   justify-content: space-between;
@@ -183,7 +129,7 @@ body {
 }
 
 #shopping-cart {
-  font-size: 3.5em;
+  font-size: 4.5em;
   padding: 2rem 3rem;
   cursor: pointer;
 }
@@ -243,6 +189,10 @@ body {
   letter-spacing: 1px;
   margin: 24px;
   cursor: pointer;
+}
+
+.product-content{
+  width: 120%;
 }
 
 .product-content > h2 {
@@ -626,8 +576,8 @@ img {
 }
 
 #popup-slideshow > .mySlides > img {
-  width: 500px;
-  height: 500px;
+  width: 30vw;
+  height: 50vh;
 }
 
 #popup-content-container {
@@ -920,8 +870,8 @@ i {
 
 #popup-window-cart {
   position: fixed;
-  width: 1200px;
-  height: 700px;
+  width: 65vw;
+  height: 75vh;
   background-color: #d3d3d3;
   padding: 10px;
   margin: auto;
@@ -934,6 +884,13 @@ i {
   border: solid 5px rgb(0, 0, 0);
   align-items: center;
   overflow: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  
+}
+
+#popup-window-cart::-webkit-scrollbar {
+  display: none;
 }
 
 .empty-shopping-cart {
