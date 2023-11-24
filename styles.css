@@ -1,9 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan&family=Nanum+Pen+Script&family=Ubuntu&display=swap");
 
-
 /* DISCOUNT */
-.discount{
+.discount {
   text-decoration: line-through;
+}
+
+.textDiscount {
+  font-weight: bold;
+  font-size: medium;
 }
 
 * {
@@ -490,7 +494,7 @@ img {
   transform: translate3d(20px, 30px, 250px);
 }
 
-.terms-and-copyright{
+.terms-and-copyright {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -498,7 +502,7 @@ img {
   font-family: "Nanum Pen Script", cursive;
 }
 
-#terms{
+#terms {
   cursor: pointer;
   text-align: center;
   width: fit-content;
@@ -507,7 +511,7 @@ img {
   text-decoration: underline;
 }
 
-.terms-container{
+.terms-container {
   width: 60vw;
   height: 55vh;
   padding: 0 24px 24px 24px;
@@ -520,18 +524,18 @@ img {
   margin-top: 24px;
 }
 
-.terms-container > h2{
+.terms-container > h2 {
   margin-bottom: 6px;
   margin-top: 24px;
   font-size: 24px;
   letter-spacing: 0.5px;
 }
 
-.info-collect{
+.info-collect {
   margin: 12px 0;
 }
 
-.info-collect > li{
+.info-collect > li {
   margin-left: 24px;
   margin-bottom: 6px;
 }
@@ -577,7 +581,7 @@ img {
   overflow: hidden;
 }
 
-.preview-product-content{
+.preview-product-content {
   justify-content: space-around;
 }
 
@@ -895,8 +899,8 @@ i {
   align-items: center;
   overflow: hidden;
   overflow-y: scroll;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
 }
 
 #popup-window-cart::-webkit-scrollbar {
