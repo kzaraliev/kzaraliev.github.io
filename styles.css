@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan&family=Nanum+Pen+Script&family=Ubuntu&display=swap");
 
+/* Closed */
+
+html{
+  background-color: #000000;
+}
+
+body{
+  display: none;
+}
+
+/* ----- */
+
 * {
   margin: 0;
   padding: 0;
