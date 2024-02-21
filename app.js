@@ -892,7 +892,7 @@ function showProduct(product) {
   let mSize;
   let lSize; 
   
-  if (product.childNodes[3].childNodes[3].textContent === "“DEVOTION” T-SHIRT") {
+  if (product.childNodes[3].childNodes[3].textContent === "“DEVOTION” T-SHIRT" || product.childNodes[3].childNodes[3].textContent === "“DEVOTION” COMBO") {
    sSize = createElement("option", "S", null, null, sizeSelector);
    mSize = createElement("option", "M", null, null, sizeSelector);
    lSize = createElement("option", "L", null, null, sizeSelector);
