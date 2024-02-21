@@ -885,12 +885,45 @@ function showProduct(product) {
     null,
     sizeSelector
   );
-  //const sSize = createElement("option", "S", null, null, sizeSelector);
-  const mSize = createElement("option", "M", null, null, sizeSelector);
-  //const lSize = createElement("option", "L", null, null, sizeSelector);
 
-  //sSize.value = "S";
+  console.log(product.childNodes[3].childNodes[3].textContent)
+
+  let sSize;
+  let mSize;
+  let lSize; 
+  
+  if (product.childNodes[3].childNodes[3].textContent === "“DEVOTION” T-SHIRT") {
+   sSize = createElement("option", "S", null, null, sizeSelector);
+   mSize = createElement("option", "M", null, null, sizeSelector);
+   lSize = createElement("option", "L", null, null, sizeSelector);
+
+   sSize.value = "S";
   mSize.value = "M";
+  lSize.value = "L";
+  }
+
+  if (product.childNodes[3].childNodes[3].textContent === "“DEVOTION” BEANIE") {
+    mSize = createElement("option", "M", null, null, sizeSelector);
+    mSize.value = "M";
+
+  }
+
+  if (product.childNodes[3].childNodes[3].textContent === "“BLACK SHEEP” HOODIE") {
+    mSize = createElement("option", "M", null, null, sizeSelector);
+    mSize.value = "M";
+
+  }
+
+  if (product.childNodes[3].childNodes[3].textContent === "“VOAM*” EMBROIDERY HOODIE") {
+    mSize = createElement("option", "M", null, null, sizeSelector);
+    lSize = createElement("option", "L", null, null, sizeSelector);
+  }
+    
+
+  //const sSize = createElement("option", "S", null, null, sizeSelector);
+  //mSize = createElement("option", "M", null, null, sizeSelector);
+  //lSize = createElement("option", "L", null, null, sizeSelector);
+  //mSize.value = "M";
   //lSize.value = "L";
 
   defaultText.value = "";
