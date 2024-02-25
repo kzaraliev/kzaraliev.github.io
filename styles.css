@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan&family=Nanum+Pen+Script&family=Ubuntu&display=swap");
 
+/* DISCOUNT */
+.discount{
+  text-decoration: line-through;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -592,7 +597,7 @@ img {
 }
 
 #popup-content-container > h1 {
-  font-size: 64px;
+  font-size: 48px;
   margin-bottom: 24px;
 }
 
