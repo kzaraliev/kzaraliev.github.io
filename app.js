@@ -237,13 +237,7 @@ function openPrivacyPolicy() {
     ul3
   );
 
-  createElement(
-    "h2",
-    "Security",
-    ["formal-text"],
-    null,
-    textContent
-  );
+  createElement("h2", "Security", ["formal-text"], null, textContent);
 
   createElement(
     "p",
@@ -269,13 +263,7 @@ function openPrivacyPolicy() {
     textContent
   );
 
-  createElement(
-    "h2",
-    "Contact Us",
-    ["formal-text"],
-    null,
-    textContent
-  );
+  createElement("h2", "Contact Us", ["formal-text"], null, textContent);
 
   createElement(
     "p",
@@ -886,39 +874,49 @@ function showProduct(product) {
     sizeSelector
   );
 
-  console.log(product.childNodes[3].childNodes[3].textContent)
+  console.log(product.childNodes[3].childNodes[3].textContent);
 
   let sSize;
   let mSize;
-  let lSize; 
-  
-  if (product.childNodes[3].childNodes[3].textContent === "“DEVOTION” T-SHIRT" || product.childNodes[3].childNodes[3].textContent === "“DEVOTION” COMBO") {
-   sSize = createElement("option", "S", null, null, sizeSelector);
-   mSize = createElement("option", "M", null, null, sizeSelector);
-   lSize = createElement("option", "L", null, null, sizeSelector);
+  let lSize;
 
-   sSize.value = "S";
-  mSize.value = "M";
-  lSize.value = "L";
+  if (
+    product.childNodes[3].childNodes[3].textContent === "“DEVOTION” T-SHIRT" ||
+    product.childNodes[3].childNodes[3].textContent === "“DEVOTION” COMBO" ||
+    product.childNodes[3].childNodes[3].textContent ===
+      "MIDNIGHT GREEN TRACKSUIT" ||
+    product.childNodes[3].childNodes[3].textContent ===
+      "MIDNIGHT GREEN HOODIE" ||
+    product.childNodes[3].childNodes[3].textContent === "MIDNIGHT GREEN SWEATPANTS"
+  ) {
+    sSize = createElement("option", "S", null, null, sizeSelector);
+    mSize = createElement("option", "M", null, null, sizeSelector);
+    lSize = createElement("option", "L", null, null, sizeSelector);
+
+    sSize.value = "S";
+    mSize.value = "M";
+    lSize.value = "L";
   }
 
   if (product.childNodes[3].childNodes[3].textContent === "“DEVOTION” BEANIE") {
     mSize = createElement("option", "M", null, null, sizeSelector);
     mSize.value = "M";
-
   }
 
-  if (product.childNodes[3].childNodes[3].textContent === "“BLACK SHEEP” HOODIE") {
+  if (
+    product.childNodes[3].childNodes[3].textContent === "“BLACK SHEEP” HOODIE"
+  ) {
     mSize = createElement("option", "M", null, null, sizeSelector);
     mSize.value = "M";
-
   }
 
-  if (product.childNodes[3].childNodes[3].textContent === "“VOAM*” EMBROIDERY HOODIE") {
+  if (
+    product.childNodes[3].childNodes[3].textContent ===
+    "“VOAM*” EMBROIDERY HOODIE"
+  ) {
     mSize = createElement("option", "M", null, null, sizeSelector);
     lSize = createElement("option", "L", null, null, sizeSelector);
   }
-    
 
   //const sSize = createElement("option", "S", null, null, sizeSelector);
   //mSize = createElement("option", "M", null, null, sizeSelector);
