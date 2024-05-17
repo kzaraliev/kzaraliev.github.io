@@ -887,7 +887,8 @@ function showProduct(product) {
       "MIDNIGHT GREEN TRACKSUIT" ||
     product.childNodes[3].childNodes[3].textContent ===
       "MIDNIGHT GREEN HOODIE" ||
-    product.childNodes[3].childNodes[3].textContent === "MIDNIGHT GREEN SWEATPANTS"
+    product.childNodes[3].childNodes[3].textContent === "MIDNIGHT GREEN SWEATPANTS" ||
+    product.childNodes[3].childNodes[3].textContent === "DEVOTION TEE WHITE"
   ) {
     sSize = createElement("option", "S", null, null, sizeSelector);
     mSize = createElement("option", "M", null, null, sizeSelector);
