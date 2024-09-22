@@ -887,12 +887,23 @@ function showProduct(product) {
       "MIDNIGHT GREEN TRACKSUIT" ||
     product.childNodes[3].childNodes[3].textContent ===
       "MIDNIGHT GREEN HOODIE" ||
-    product.childNodes[3].childNodes[3].textContent === "MIDNIGHT GREEN SWEATPANTS" ||
-    product.childNodes[3].childNodes[3].textContent === "DEVOTION TEE WHITE"||
-    product.childNodes[3].childNodes[3].textContent === "EMBROIDERY TEE BLACK" ||
-    product.childNodes[3].childNodes[3].textContent === "EMBROIDERY TEE WHITE"||
-    product.childNodes[3].childNodes[3].textContent === "AGWYT TEE BLACK"||
-    product.childNodes[3].childNodes[3].textContent === "AGWYT TEE WHITE"
+    product.childNodes[3].childNodes[3].textContent ===
+      "MIDNIGHT GREEN SWEATPANTS" ||
+    product.childNodes[3].childNodes[3].textContent === "DEVOTION TEE WHITE" ||
+    product.childNodes[3].childNodes[3].textContent ===
+      "EMBROIDERY TEE BLACK" ||
+    product.childNodes[3].childNodes[3].textContent ===
+      "EMBROIDERY TEE WHITE" ||
+      product.childNodes[3].childNodes[3].textContent === "AGWYT TEE BLACK" ||
+    product.childNodes[3].childNodes[3].textContent === "AGWYT TEE WHITE" ||
+    product.childNodes[3].childNodes[3].textContent === "AGWYT* TEE Black" ||
+    product.childNodes[3].childNodes[3].textContent === "AGWYT* TEE White" ||
+    product.childNodes[3].childNodes[3].textContent === "Voam* Hoodie black" ||
+    product.childNodes[3].childNodes[3].textContent === "AGWYT* Grey Hoodie" ||
+    product.childNodes[3].childNodes[3].textContent === "Voam* Black Pants" ||
+    product.childNodes[3].childNodes[3].textContent === "AGWYT* Grey Pants" ||
+    product.childNodes[3].childNodes[3].textContent === "Voam* Black Tracksuit" ||
+    product.childNodes[3].childNodes[3].textContent === "AGWYT* Grey Tracksuit"
   ) {
     sSize = createElement("option", "S", null, null, sizeSelector);
     mSize = createElement("option", "M", null, null, sizeSelector);
