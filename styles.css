@@ -159,10 +159,10 @@ body {
 /*Home section*/
 
 #home {
-  height: 600px;
+  height: 650px;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-image: url(img/baner-small.png);
+  background-image: url(img/baner.png);
   display: flex;
   flex-direction: column;
   justify-content: center;
